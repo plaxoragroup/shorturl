@@ -1,0 +1,3 @@
+# Short URL
+
+Project initialized.
