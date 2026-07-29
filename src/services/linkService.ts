@@ -1,5 +1,5 @@
 // src/services/linkService.ts
-import { ref, set, get, query, orderByChild, equalTo, remove, update } from 'firebase/database';
+import { ref, set, get, remove, update } from 'firebase/database';
 import { rtdb } from '../lib/firebase';
 
 export interface ShortLink {
