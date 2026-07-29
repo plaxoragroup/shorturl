@@ -1,0 +1,45 @@
+:root {
+  /* Light Mode Colors */
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-secondary: #06B6D4;
+  --color-background: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+
+  /* Typography */
+  --font-family: 'Inter', 'Noto Sans Bengali', sans-serif;
+  --font-size-base-desktop: 16px;
+  --font-size-base-mobile: 15px;
+  
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  --radius-btn: 10px;
+  --radius-card: 16px;
+  --radius-input: 10px;
+  --radius-qr: 12px;
+}
+
+[data-theme='dark'] {
+  /* Dark Mode Colors */
+  --color-background: #0F1115;
+  --color-surface: #1A1D23;
+  --color-border: #2A2D34;
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #9CA3AF;
+  --color-primary: #6366F1;
+  --color-primary-hover: #4F46E5;
+  --color-secondary: #22D3EE;
+}

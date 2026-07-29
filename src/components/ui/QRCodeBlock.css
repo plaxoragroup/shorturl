@@ -1,0 +1,12 @@
+.qr-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-box {
+  background-color: #ffffff; /* Must stay white for scanability */
+  padding: var(--spacing-4);
+  border-radius: var(--radius-qr);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

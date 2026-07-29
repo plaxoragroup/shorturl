@@ -1,0 +1,91 @@
+@import './styles/variables.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .hero-gradient-light {
+      background: radial-gradient(circle at 50% -20%, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.06) 45%, rgba(248, 250, 252, 0) 75%);
+  }
+  .dark .hero-gradient-dark {
+      background: radial-gradient(circle at 50% -20%, rgba(37, 99, 235, 0.25) 0%, rgba(139, 92, 246, 0.15) 45%, rgba(9, 13, 22, 0) 75%);
+  }
+  .banner-gradient {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(6, 182, 212, 0.08) 100%);
+  }
+  .dark .banner-gradient {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.25) 0%, rgba(139, 92, 246, 0.2) 50%, rgba(6, 182, 212, 0.15) 100%);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+.dark ::-webkit-scrollbar-track { background: #090D16; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* Base utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+}
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-col { flex-direction: column; }
+.gap-2 { gap: var(--spacing-2); }
+.gap-4 { gap: var(--spacing-4); }
+.gap-6 { gap: var(--spacing-6); }
+
+.mt-4 { margin-top: var(--spacing-4); }
+.mt-8 { margin-top: var(--spacing-8); }
+.mb-4 { margin-bottom: var(--spacing-4); }

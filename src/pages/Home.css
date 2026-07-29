@@ -1,0 +1,114 @@
+.hero-section {
+  min-height: calc(100vh - 64px);
+  padding: var(--spacing-8) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-4);
+}
+
+.hero-title span {
+  color: var(--color-primary);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-bottom: var(--spacing-8);
+}
+
+.shortener-box {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-6);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.input-group {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.hero-input {
+  flex: 1;
+}
+
+.hero-input .input-field {
+  height: 52px;
+  font-size: 16px;
+  border-radius: var(--radius-btn);
+}
+
+.hero-btn {
+  height: 52px;
+  padding: 0 var(--spacing-8);
+}
+
+.result-area {
+  margin-top: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  animation: fadeIn 0.3s ease;
+}
+
+.result-url-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: rgba(79, 70, 229, 0.05);
+  border: 1px dashed var(--color-primary);
+  border-radius: var(--radius-btn);
+}
+
+.result-url {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.guest-disclaimer {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.guest-disclaimer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.qr-result {
+  margin-top: var(--spacing-4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 32px;
+  }
+  .input-group {
+    flex-direction: column;
+  }
+  .hero-btn {
+    width: 100%;
+  }
+}
