@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ref, get, update, increment } from 'firebase/database';
+import { rtdb } from '../lib/firebase';
+import { ShortLink } from '../services/linkService';
 
 export const RedirectHandler: React.FC = () => {
   const { shortcode } = useParams<{ shortcode: string }>();
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Mock Redirect Logic
     const redirect = async () => {
       try {
         if (!shortcode) throw new Error('Invalid shortcode');
         
-        // Mock API call to get original URL
-        console.log(`Fetching original URL for ${shortcode}...`);
+        const linkRef = ref(rtdb, `links/${shortcode}`);
+        const snapshot = await get(linkRef);
         
-        // Simulate network delay
-        await new Promise(resolve => setTimeout(resolve, 500));
-
-        if (shortcode === 'test') {
-          window.location.href = 'https://google.com';
+        if (snapshot.exists()) {
+          const data = snapshot.val() as ShortLink;
+          if (data.isActive) {
+            try {
+               await update(linkRef, { clickCount: increment(1) });
+            } catch (e) {
+               console.error("Failed to increment click count", e);
+            }
+            window.location.replace(data.originalUrl);
+          } else {
+            setError('This link has been disabled.');
+          }
         } else {
           setError('Link not found or is disabled.');
         }
