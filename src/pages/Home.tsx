@@ -85,7 +85,7 @@ const blogArticlesData = [
 const faqItems = [
   { q: "Is Plaxora Links 100% free to use?", a: "Yes! Plaxora Links allows you to shorten unlimited long URLs, create custom aliases, generate QR codes, and view basic click analytics completely free without creating an account." },
   { q: "Do short links created on Plaxora Links expire?", a: "No. All shortened URLs generated on Plaxora Links are permanent and remain active indefinitely unless they violate our anti-spam security policies." },
-  { q: "Can I choose my own custom alias slug?", a: "Absolutely. You can specify custom word aliases (e.g. plaxora.link/my-brand-deal) directly in our tool provided the keyword is not already taken." },
+  { q: "Can I choose my own custom alias slug?", a: "Absolutely. You can specify custom word aliases (e.g. shorturlplx.vercel.app/my-brand-deal) directly in our tool provided the keyword is not already taken." },
   { q: "How does the built-in QR code generator work?", a: "Every link you shorten automatically generates a high-definition dynamic QR code that can be downloaded in vector SVG or PNG format for print and digital use." },
   { q: "Is registration or credit card required?", a: "No signup or payment details are ever required to use our primary link shortener tool." },
   { q: "How fast are the link redirects?", a: "Our globally distributed edge servers deliver sub-15 millisecond 301 redirects to ensure your traffic reaches destination pages instantly." },
@@ -97,7 +97,7 @@ export const Home: React.FC = () => {
   
   // URL Shortener States
   const [longUrl, setLongUrl] = useState('');
-  const [domain, setDomain] = useState('plaxora.link');
+  const [domain, setDomain] = useState('shorturlplx.vercel.app');
   const [customAlias, setCustomAlias] = useState('');
   const [generatedLink, setGeneratedLink] = useState<ShortLink | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -177,7 +177,7 @@ export const Home: React.FC = () => {
               </div>
 
               <div className="flex items-center bg-surface-offwhite dark:bg-slate-900/80 rounded-2xl border border-surface-border dark:border-surface-darkborder px-4 py-3">
-                <span className="text-xs font-mono font-semibold text-brand-blue dark:text-brand-cyan mr-1">plaxora.link/</span>
+                <span className="text-xs font-mono font-semibold text-brand-blue dark:text-brand-cyan mr-1">shorturlplx.vercel.app/</span>
                 <input 
                   type="text" 
                   value={customAlias}
@@ -346,7 +346,7 @@ export const Home: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-surface-border dark:border-surface-darkborder gap-4">
                     <div>
                         <div className="text-xs text-surface-mediumgray dark:text-slate-400 font-mono">LINK ANALYTICS REPORT</div>
-                        <div className="font-heading font-bold text-xl text-surface-nearblack dark:text-white mt-0.5">plaxora.link/black-friday-2026</div>
+                        <div className="font-heading font-bold text-xl text-surface-nearblack dark:text-white mt-0.5">shorturlplx.vercel.app/black-friday-2026</div>
                     </div>
                     <div className="flex items-center space-x-2">
                         <span className="px-3 py-1 rounded-lg bg-surface-offwhite dark:bg-slate-800 text-xs font-semibold text-surface-mediumgray dark:text-slate-300">Target: https://mybrand.com/store/promotions</span>
