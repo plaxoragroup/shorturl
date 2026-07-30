@@ -11,10 +11,10 @@ export const Footer: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center text-white font-bold text-lg">
                 <i className="fa-solid fa-link"></i>
               </div>
-              <span className="font-heading font-extrabold text-2xl text-slate-900 dark:text-white">Plaxora Links</span>
+              <span className="font-heading font-extrabold text-2xl text-slate-900 dark:text-white">ShortURL</span>
             </a>
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-              Plaxora Links is the premier free URL shortener and link management ecosystem engineered for ultimate SEO reach, instant QR generation, custom branded aliases, and privacy-first link analytics.
+              ShortURL is the premier free URL shortener and link management ecosystem engineered for ultimate SEO reach, instant QR generation, custom branded aliases, and privacy-first link analytics.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2">
             <h5 className="text-xs font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Ecosystem</h5>
             <ul className="space-y-2 text-xs">
-              <li><a href="#" className="hover:text-brand-blue dark:hover:text-white transition-colors">Plaxora Home</a></li>
+              <li><a href="#" className="hover:text-brand-blue dark:hover:text-white transition-colors">ShortURL Home</a></li>
               <li><a href="#features" className="hover:text-brand-blue dark:hover:text-white transition-colors">Features Matrix</a></li>
               <li><a href="#faq" className="hover:text-brand-blue dark:hover:text-white transition-colors">Help Center</a></li>
               <li><a href="#" className="hover:text-brand-blue dark:hover:text-white transition-colors">Privacy Policy</a></li>
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 transition-colors">
-          <p>© 2026 Plaxora Links. All rights reserved.</p>
+          <p>© 2026 ShortURL. All rights reserved.</p>
           <div className="text-center sm:text-right">
             <p className="mb-1">Engineered for high-speed performance and maximum topical authority.</p>
             <p>Developed and owned by <a href="https://plaxoragroup.com" target="_blank" rel="noreferrer" className="text-brand-blue hover:underline font-semibold">Plaxora Group</a></p>
