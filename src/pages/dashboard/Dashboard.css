@@ -172,6 +172,15 @@
   .link-item-card {
     flex-direction: column;
     gap: var(--spacing-4);
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .link-details {
+    width: 100%;
+  }
+  .link-original {
+    max-width: 100%;
   }
   .link-actions {
     width: 100%;
