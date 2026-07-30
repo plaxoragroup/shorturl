@@ -176,27 +176,17 @@ export const Home: React.FC = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center bg-surface-offwhite dark:bg-slate-900/80 rounded-2xl border border-surface-border dark:border-surface-darkborder px-4 py-2.5">
-                  <span className="text-xs font-mono font-medium text-surface-mediumgray dark:text-slate-400 mr-1">Domain:</span>
-                  <select value={domain} onChange={e => setDomain(e.target.value)} className="bg-transparent text-xs font-semibold text-brand-blue dark:text-brand-cyan focus:outline-none w-full cursor-pointer">
-                    <option value="plaxora.link">plaxora.link</option>
-                    <option value="px.sh">px.sh</option>
-                    <option value="brand.link">brand.link</option>
-                  </select>
-                </div>
-                <div className="flex items-center bg-surface-offwhite dark:bg-slate-900/80 rounded-2xl border border-surface-border dark:border-surface-darkborder px-4 py-2.5">
-                  <span className="text-xs font-mono text-surface-mediumgray dark:text-slate-400 mr-1">/</span>
-                  <input 
-                    type="text" 
-                    value={customAlias}
-                    onChange={e => setCustomAlias(e.target.value)}
-                    placeholder="custom-alias (optional)" 
-                    disabled={!currentUser}
-                    title={!currentUser ? "Login to use custom aliases" : ""}
-                    className="bg-transparent text-xs text-surface-nearblack dark:text-white placeholder-surface-mediumgray dark:placeholder-slate-500 focus:outline-none w-full disabled:opacity-50"
-                  />
-                </div>
+              <div className="flex items-center bg-surface-offwhite dark:bg-slate-900/80 rounded-2xl border border-surface-border dark:border-surface-darkborder px-4 py-3">
+                <span className="text-xs font-mono font-semibold text-brand-blue dark:text-brand-cyan mr-1">plaxora.link/</span>
+                <input 
+                  type="text" 
+                  value={customAlias}
+                  onChange={e => setCustomAlias(e.target.value)}
+                  placeholder="custom-alias (optional)" 
+                  disabled={!currentUser}
+                  title={!currentUser ? "Login to use custom aliases" : ""}
+                  className="bg-transparent text-xs text-surface-nearblack dark:text-white placeholder-surface-mediumgray dark:placeholder-slate-500 focus:outline-none w-full disabled:opacity-50"
+                />
               </div>
 
               <button type="submit" disabled={isSubmitting} className="w-full py-4 px-6 rounded-2xl bg-brand-blue hover:bg-brand-purple text-white font-bold text-sm transition-all duration-200 shadow-md hover:shadow-glow-purple flex items-center justify-center space-x-2">
