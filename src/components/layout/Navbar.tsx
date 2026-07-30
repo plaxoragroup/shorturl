@@ -33,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           </div>
           <div className="flex flex-col">
             <span className="font-heading font-extrabold text-2xl tracking-tight text-surface-nearblack dark:text-white leading-none">
-              Plaxora<span className="text-brand-blue">Links</span>
+              Short<span className="text-brand-blue">URL</span>
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-widest text-brand-purple mt-0.5">Link Ecosystem</span>
           </div>
