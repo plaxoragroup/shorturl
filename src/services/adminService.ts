@@ -159,7 +159,7 @@ export const getSettings = async (): Promise<PlatformSettings> => {
     return snapshot.val() as PlatformSettings;
   }
   return {
-    websiteName: 'Plaxora Links',
+    websiteName: 'ShortURL',
     maintenanceMode: false,
     enableGuestLinks: true
   };
