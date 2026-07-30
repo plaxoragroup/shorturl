@@ -66,7 +66,10 @@ export const Footer: React.FC = () => {
 
         <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 transition-colors">
           <p>© 2026 Plaxora Links. All rights reserved.</p>
-          <p>Engineered for high-speed performance and maximum topical authority.</p>
+          <div className="text-center sm:text-right">
+            <p className="mb-1">Engineered for high-speed performance and maximum topical authority.</p>
+            <p>Developed and owned by <a href="https://plaxoragroup.com" target="_blank" rel="noreferrer" className="text-brand-blue hover:underline font-semibold">Plaxora Group</a></p>
+          </div>
         </div>
       </div>
     </footer>
