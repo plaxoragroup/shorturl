@@ -97,7 +97,7 @@ export const Home: React.FC = () => {
   
   // URL Shortener States
   const [longUrl, setLongUrl] = useState('');
-  const [domain, setDomain] = useState('shorturlplx.vercel.app');
+  const [domain] = useState('shorturlplx.vercel.app');
   const [customAlias, setCustomAlias] = useState('');
   const [generatedLink, setGeneratedLink] = useState<ShortLink | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
