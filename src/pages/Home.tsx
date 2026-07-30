@@ -102,7 +102,7 @@ export const Home: React.FC = () => {
   const [generatedLink, setGeneratedLink] = useState<ShortLink | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [isQrOpen, setIsQrOpen] = useState(false);
+  
 
   // Layout States
   const [activePseo, setActivePseo] = useState<keyof typeof pseoPagesData>('bitly-alternative');
@@ -136,6 +136,27 @@ export const Home: React.FC = () => {
     navigator.clipboard.writeText(fullUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleDownloadQr = async () => {
+    if (!generatedLink) return;
+    const fullUrl = `https://${domain}/${generatedLink.alias}`;
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${encodeURIComponent(fullUrl)}`;
+    
+    try {
+      const response = await fetch(qrApiUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `qrcode-${generatedLink.alias}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (e) {
+      window.open(qrApiUrl, '_blank');
+    }
   };
 
   const pseoData = pseoPagesData[activePseo];
@@ -209,8 +230,8 @@ export const Home: React.FC = () => {
                     <button onClick={handleCopy} className="px-4 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-purple text-white text-xs font-semibold transition-all shadow-xs flex items-center">
                       <i className="fa-regular fa-copy mr-1.5"></i> <span>{copied ? "Copied!" : "Copy Link"}</span>
                     </button>
-                    <button onClick={() => setIsQrOpen(true)} className="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-surface-border dark:border-surface-darkborder text-surface-darkgray dark:text-slate-200 text-xs font-semibold hover:bg-surface-lightgray dark:hover:bg-slate-700 transition-colors flex items-center">
-                      <i className="fa-solid fa-qrcode mr-1.5 text-brand-purple"></i> QR Code
+                    <button onClick={handleDownloadQr} className="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-surface-border dark:border-surface-darkborder text-surface-darkgray dark:text-slate-200 text-xs font-semibold hover:bg-surface-lightgray dark:hover:bg-slate-700 transition-colors flex items-center">
+                      <i className="fa-solid fa-qrcode mr-1.5 text-brand-purple"></i> QR Save
                     </button>
                   </div>
                 </div>
@@ -570,31 +591,6 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* QR Code Modal */}
-      {isQrOpen && generatedLink && (
-        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setIsQrOpen(false)}>
-          <div className="bg-white dark:bg-surface-darkcard max-w-md w-full rounded-3xl p-6 border border-surface-border shadow-2xl" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center justify-between pb-3 border-b border-surface-border">
-              <h3 className="font-heading font-bold text-lg">QR Code</h3>
-              <button onClick={() => setIsQrOpen(false)}><i className="fa-solid fa-xmark"></i></button>
-            </div>
-            <div className="flex flex-col items-center p-6 bg-surface-offwhite rounded-2xl my-4">
-              <div className="p-3 bg-white rounded-xl shadow-sm">
-                <svg width="180" height="180" viewBox="0 0 100 100">
-                  <rect width="100" height="100" fill="#ffffff" />
-                  <path d="M10 10 h30 v30 h-30 z M15 15 h20 v20 h-20 z M20 20 h10 v10 h-10 z" fill="#2563EB" />
-                  <path d="M60 10 h30 v30 h-30 z M65 15 h20 v20 h-20 z M70 20 h10 v10 h-10 z" fill="#2563EB" />
-                  <path d="M10 60 h30 v30 h-30 z M15 65 h20 v20 h-20 z M20 70 h10 v10 h-10 z" fill="#2563EB" />
-                  <rect x="50" y="50" width="10" height="10" fill="#8B5CF6" />
-                  <rect x="65" y="65" width="15" height="15" fill="#2563EB" />
-                </svg>
-              </div>
-              <span className="text-xs font-mono text-brand-blue mt-3">https://{domain}/{generatedLink.alias}</span>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Article Modal */}
       {activeArticle && (
