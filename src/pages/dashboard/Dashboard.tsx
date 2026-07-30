@@ -133,8 +133,8 @@ export const Dashboard: React.FC = () => {
               <Card key={link.id} className="link-item-card">
                 <div className="link-details">
                   <div className="link-title-row">
-                    <a href={`http://go.plaxora.com/${link.alias}`} className="link-alias" target="_blank" rel="noreferrer">
-                      go.plaxora.com/{link.alias}
+                    <a href={`https://shorturlplx.vercel.app/${link.alias}`} className="link-alias" target="_blank" rel="noreferrer">
+                      shorturlplx.vercel.app/{link.alias}
                     </a>
                     <span className={`status-badge ${link.isActive ? 'status-active' : 'status-disabled'}`}>
                       {link.isActive ? 'Active' : 'Disabled'}
@@ -150,7 +150,7 @@ export const Dashboard: React.FC = () => {
 
                 <div className="link-actions">
                   <Button variant="ghost" size="sm" aria-label="Copy" onClick={() => {
-                    navigator.clipboard.writeText(`http://go.plaxora.com/${link.alias}`);
+                    navigator.clipboard.writeText(`https://shorturlplx.vercel.app/${link.alias}`);
                     alert('Link copied!');
                   }}>
                     <Copy size={16} />
