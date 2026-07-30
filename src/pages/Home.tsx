@@ -5,7 +5,7 @@ import { createGuestLink, createAuthLink, ShortLink } from '../services/linkServ
 const pseoPagesData = {
   'bitly-alternative': {
       title: "Best Free Bitly Alternative (No Signup Required)",
-      subtitle: "Looking for an unlimited free Bitly alternative? Plaxora Links provides custom aliases, QR codes, and real-time analytics without monthly click limits.",
+      subtitle: "Looking for an unlimited free Bitly alternative? ShortURL provides custom aliases, QR codes, and real-time analytics without monthly click limits.",
       badge: "COMPETITOR ALTERNATIVE",
       features: [
           "Unlimited links vs Bitly's 10 free link monthly cap",
@@ -73,7 +73,7 @@ const pseoPagesData = {
 
 const blogArticlesData = [
   { id: 1, cluster: "shortening", title: "How URL Shorteners Work: The Technical Guide to 301 Redirects", meta: "Learn the underlying HTTP status codes, DNS lookup speeds, and database key lookup mechanisms powering modern link shorteners.", intent: "Informational", keyword: "how url shorteners work", outline: ["1. Introduction to Link Redirection", "2. 301 vs 302 Redirect Status Codes", "3. Base62 Hash Algorithm Encoding", "4. Edge Server Caching for <15ms Latency"] },
-  { id: 2, cluster: "shortening", title: "Best Free URL Shorteners in 2026: Complete Comparison", meta: "Discover the top 10 free link shortening tools evaluated for click caps, custom aliases, QR code support, and privacy.", intent: "Commercial Investigation", keyword: "best free url shortener", outline: ["1. What Makes a Great Link Shortener?", "2. Plaxora Links vs Competitors", "3. Feature Matrix Breakdown", "4. Final Recommendation"] },
+  { id: 2, cluster: "shortening", title: "Best Free URL Shorteners in 2026: Complete Comparison", meta: "Discover the top 10 free link shortening tools evaluated for click caps, custom aliases, QR code support, and privacy.", intent: "Commercial Investigation", keyword: "best free url shortener", outline: ["1. What Makes a Great Link Shortener?", "2. ShortURL vs Competitors", "3. Feature Matrix Breakdown", "4. Final Recommendation"] },
   { id: 3, cluster: "management", title: "Why Custom Branded Short Links Increase CTR by 39%", meta: "Explore marketing psychology research proving why branded domains outperform generic bit.ly links across email and SMS campaigns.", intent: "Informational / Marketing", keyword: "custom branded short links", outline: ["1. Trust Factors in Link Mechanics", "2. Case Study: E-commerce CTR Spikes", "3. Configuring Custom Domain Aliases"] },
   { id: 4, cluster: "qrcodes", title: "How to Generate Free QR Codes with Custom Short URLs", meta: "Step-by-step tutorial on building print-ready QR codes linked to dynamic short URLs for events, packaging, and business cards.", intent: "How-To", keyword: "free url shortener with qr code", outline: ["1. Why Dynamic QR Codes Matter", "2. Choosing Vector Formats (SVG vs PNG)", "3. Tracking Offline Conversions"] },
   { id: 5, cluster: "analytics", title: "Understanding Link Click Analytics Without Cookies", meta: "How privacy-first analytics capture referrer domains, devices, and geographic metrics without violating GDPR or using tracking cookies.", intent: "Technical / Informational", keyword: "free link analytics platform", outline: ["1. The Death of Third-Party Cookies", "2. Server-side Anonymized Logging", "3. Evaluating Referrer Data"] },
@@ -83,8 +83,8 @@ const blogArticlesData = [
 ];
 
 const faqItems = [
-  { q: "Is Plaxora Links 100% free to use?", a: "Yes! Plaxora Links allows you to shorten unlimited long URLs, create custom aliases, generate QR codes, and view basic click analytics completely free without creating an account." },
-  { q: "Do short links created on Plaxora Links expire?", a: "No. All shortened URLs generated on Plaxora Links are permanent and remain active indefinitely unless they violate our anti-spam security policies." },
+  { q: "Is ShortURL 100% free to use?", a: "Yes! ShortURL allows you to shorten unlimited long URLs, create custom aliases, generate QR codes, and view basic click analytics completely free without creating an account." },
+  { q: "Do short links created on ShortURL expire?", a: "No. All shortened URLs generated on ShortURL are permanent and remain active indefinitely unless they violate our anti-spam security policies." },
   { q: "Can I choose my own custom alias slug?", a: "Absolutely. You can specify custom word aliases (e.g. shorturlplx.vercel.app/my-brand-deal) directly in our tool provided the keyword is not already taken." },
   { q: "How does the built-in QR code generator work?", a: "Every link you shorten automatically generates a high-definition dynamic QR code that can be downloaded in vector SVG or PNG format for print and digital use." },
   { q: "Is registration or credit card required?", a: "No signup or payment details are ever required to use our primary link shortener tool." },
@@ -353,7 +353,7 @@ export const Home: React.FC = () => {
                         Interactive Link Analytics Dashboard
                     </h2>
                     <p className="text-sm sm:text-base text-surface-mediumgray dark:text-slate-400 mt-2">
-                        See how Plaxora Links provides actionable marketing insights for every shortened link in real time.
+                        See how ShortURL provides actionable marketing insights for every shortened link in real time.
                     </p>
                 </div>
                 <div className="mt-4 md:mt-0 flex items-center space-x-2">
@@ -428,10 +428,10 @@ export const Home: React.FC = () => {
                 <span>Marketplace Benchmarking</span>
             </div>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-surface-nearblack dark:text-white tracking-tight">
-              Why Marketers Switch to Plaxora Links
+              Why Marketers Switch to ShortURL
             </h2>
             <p className="text-sm sm:text-base text-surface-mediumgray dark:text-slate-400 mt-2">
-                Compare Plaxora Links with traditional link shorteners. We offer unlimited free custom aliases, no signup barriers, and transparent privacy.
+                Compare ShortURL with traditional link shorteners. We offer unlimited free custom aliases, no signup barriers, and transparent privacy.
             </p>
           </div>
           <div className="overflow-x-auto rounded-3xl border border-surface-border dark:border-surface-darkborder bg-surface-offwhite dark:bg-slate-900 shadow-sm">
@@ -439,7 +439,7 @@ export const Home: React.FC = () => {
               <thead>
                 <tr className="bg-slate-100 dark:bg-slate-800/80 text-surface-nearblack dark:text-white border-b border-surface-border dark:border-surface-darkborder">
                   <th className="p-4 sm:p-5 font-heading font-bold">Feature Comparison</th>
-                  <th className="p-4 sm:p-5 font-heading font-extrabold text-brand-blue dark:text-brand-cyan bg-blue-50/50 dark:bg-blue-950/30">Plaxora Links</th>
+                  <th className="p-4 sm:p-5 font-heading font-extrabold text-brand-blue dark:text-brand-cyan bg-blue-50/50 dark:bg-blue-950/30">ShortURL</th>
                   <th className="p-4 sm:p-5 font-heading font-bold text-surface-mediumgray">Bitly</th>
                   <th className="p-4 sm:p-5 font-heading font-bold text-surface-mediumgray">TinyURL</th>
                   <th className="p-4 sm:p-5 font-heading font-bold text-surface-mediumgray">Short.io</th>
